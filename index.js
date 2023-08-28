@@ -35,12 +35,12 @@ const questions = [
     {
         type: "input",
         name: "contributors",
-        message: "Please complete all test during demo"
+        message: "Please credit any contributors to the project here:"
     },
     {
         type: "input",
         name: "test",
-        message: "N/A"
+        message: "Have all test been completed?"
     },
     {
         type: "input",
@@ -63,7 +63,7 @@ function writeToFile(fileName, data) {
 
 // TODO: Create a function to initialize app
 function init() {
-    inquirer.promt(questions).then((responses) => {
+    inquirer.prompt(questions).then((responses) => {
         console.log("Creating Professional README.md File...");
         writeToFile("./dist/README.md", generateMarkdown({ ...responses }));
     });
